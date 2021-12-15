@@ -1,0 +1,18 @@
+controller_list:
+  - name: delta_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_1
+      - uj_11
+      - uj_12
+      - uj_13
+      - joint_2
+      - uj_21
+      - uj_22
+      - uj_23
+      - joint_3
+      - uj_31
+      - uj_32
+      - uj_33

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_irb360_support)/urdf/irb360_800_arm.xacro"/>
+
+  <xacro:macro name="irb360_800">
+
+    <link name="base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/base_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/base_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <xacro:irb360_800_arm arm="arm_1" theta="1">
+      <origin xyz="0.2 0 -0.275" rpy="0 -0.11527 0" />
+    </xacro:irb360_800_arm>
+
+    <xacro:irb360_800_arm arm="arm_2" theta="2">
+      <origin xyz="-0.1 -0.17321 -0.275" rpy="0 -0.11527 -2.0944" />
+    </xacro:irb360_800_arm>
+
+    <xacro:irb360_800_arm arm="arm_3" theta="3">
+      <origin xyz="-0.1 0.17321 -0.275" rpy="0 -0.11527 2.0944" />
+    </xacro:irb360_800_arm>
+  
+  </xacro:macro>
+</robot>
+
+

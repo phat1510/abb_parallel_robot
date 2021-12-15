@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
+
+  <xacro:macro name="irb360_800_arm" params="arm theta *origin">
+  
+    <joint name="joint_${theta}" type="continuous">
+      <xacro:insert_block name="origin" />
+      <parent link="base_link" />
+      <child link="${arm}_link_1" />
+      <axis xyz="0 1 0" />
+      <limit lower="0" upper="0" effort="0" velocity="0" />
+    </joint>
+    <link name="${arm}_link_1">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/upper_arm_1.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.7451 0.7451 0.7451 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/upper_arm_1.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="uj_${theta}1" type="continuous">
+      <origin xyz="0.23344 0 -0.027" rpy="0 0.62449 0" />
+      <parent link="${arm}_link_1" />
+      <child link="${arm}_link_2" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${arm}_link_2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/upper_universal_link_1.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.49804 0.49804 0.46275 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/upper_universal_link_1.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="uj_${theta}2" type="continuous">
+      <origin xyz="0 0 0" rpy="1.5708 1.5708 0" />
+      <parent link="${arm}_link_2" />
+      <child link="${arm}_link_3" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${arm}_link_3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/lower_arm_1.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.7451 0.7451 0.7451 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/lower_arm_1.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="uj_${theta}3" type="continuous">
+      <origin xyz="0.8 0 0" rpy="-1.5708 0 -1.5708" />
+      <parent link="${arm}_link_3" />
+      <child link="${arm}_link_4" />
+      <axis xyz="1 0 0" />
+    </joint>
+    <link name="${arm}_link_4">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/lower_universal_link_1.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.49804 0.49804 0.46275 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://abb_irb360_support/meshes/lower_universal_link_1.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+</robot>

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_irb360_support
+    relative_path: urdf/irb360_800.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/irb360_800.srdf
+  CONFIG:
+    author_name: phat
+    author_email: phat.dominh@vn.bosch.com
+    generated_timestamp: 1639543858
