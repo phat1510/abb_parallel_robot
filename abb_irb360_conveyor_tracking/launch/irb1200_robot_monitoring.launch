@@ -1,0 +1,4 @@
+<launch>
+  <node name="irb1200_robot_monitoring" pkg="abb_irb360_conveyor_tracking" type="irb1200_robot_monitoring" respawn="false" output="screen">
+  </node>
+</launch>

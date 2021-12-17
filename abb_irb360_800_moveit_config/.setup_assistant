@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: phat
     author_email: phat.dominh@vn.bosch.com
-    generated_timestamp: 1639543858
+    generated_timestamp: 1639626828

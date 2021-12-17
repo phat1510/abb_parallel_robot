@@ -2,7 +2,24 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="irb360_800">
 
   <xacro:include filename="$(find abb_irb360_support)/urdf/irb360_800.xacro"/>
+  <xacro:include filename="$(find abb_irb360_support)/urdf/irb360_800_moving_platform.xacro"/>
 
+  <!-- Three arms macro -->
   <xacro:irb360_800 />
+
+  <!-- Attach moving platform to arm 1 -->
+  <xacro:irb360_800_moving_platform parent = "arm_1" theta = "1">
+    <origin xyz="0 0 0" rpy="-3.14159265358979 0.509224169080082 -3.14159265358979" />
+  </xacro:irb360_800_moving_platform>
+
+  <xacro:irb360_800_moving_platform parent = "arm_2" theta = "2">
+    <origin xyz="0 0 0" rpy="-3.14159265358979 0.509224169080082 -3.14159265358979" />
+  </xacro:irb360_800_moving_platform>
+
+  <xacro:irb360_800_moving_platform parent = "arm_3" theta = "3">
+    <origin xyz="0 0 0" rpy="-3.14159265358979 0.509224169080082 -3.14159265358979" />
+  </xacro:irb360_800_moving_platform>
+
+
 
 </robot>

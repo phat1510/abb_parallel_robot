@@ -1,10 +1,101 @@
-delta_controller:
-  type: position_controllers/JointTrajectoryController
+delta_arm_1_controller:
+  type: effort_controllers/JointTrajectoryController
   joints:
     - joint_1
     - uj_11
     - uj_12
     - uj_13
+    - uj_14
+  gains:
+    joint_1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_11:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_12:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_13:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_14:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+delta_arm_2_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - joint_2
+    - uj_21
+    - uj_22
+    - uj_23
+  gains:
+    joint_2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_21:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_22:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_23:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+delta_arm_3_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - joint_3
+    - uj_31
+    - uj_32
+    - uj_33
+  gains:
+    joint_3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_31:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_32:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_33:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+delta_irb360_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - joint_1
+    - uj_11
+    - uj_12
+    - uj_13
+    - uj_14
     - joint_2
     - uj_21
     - uj_22
@@ -30,6 +121,11 @@ delta_controller:
       i: 1
       i_clamp: 1
     uj_13:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    uj_14:
       p: 100
       d: 1
       i: 1

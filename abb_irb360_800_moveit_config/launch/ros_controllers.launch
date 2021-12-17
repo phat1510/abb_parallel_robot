@@ -6,6 +6,6 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="delta_controller "/>
+    output="screen" args="delta_arm_1_controller delta_arm_2_controller delta_arm_3_controller delta_irb360_controller "/>
 
 </launch>

@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- Values defined on the ROS parameter server -->
+
+  <!-- Conveyor velocity  -->
+  <!-- Unit: m/s -->
+  <arg name="conveyor_velocity" value="0.28" />
+
+  <!-- Gripping time of VGC10 -->
+  <!-- Gripping time is the period vacuum cup contacts with object before picking up -->
+  <!-- Unit: second -->
+  <arg name="gripping_time" value="0.8" />
+
+  <!-- Tracking point - y axis offset -->
+  <!-- Using for abb_robot_driver only -->
+  <!-- Unit: m -->
+  <arg name="tracking_point_y_offset" value="0" />
+
+  
+  <node name="robot_conveyor_tracking" pkg="abb_irb360_conveyor_tracking" type="robot_conveyor_tracking" respawn="false" output="screen">
+  <param name="gripping_time" value="$(arg gripping_time)"/>
+  <param name="tracking_point_y_offset" value="$(arg tracking_point_y_offset)"/>
+  </node>
+<!-- 
+  <node name="irb1200_objects_publisher" pkg="abb_irb360_conveyor_tracking" type="irb1200_objects_publisher" respawn="false" output="screen">
+  <param name="conveyor_velocity" value="$(arg conveyor_velocity)"/>
+  </node> -->
+  
+</launch>

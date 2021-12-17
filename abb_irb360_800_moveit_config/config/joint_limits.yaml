@@ -10,61 +10,61 @@ default_acceleration_scaling_factor: 0.1
 joint_limits:
   joint_1:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 50.24
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1200
   joint_2:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 50.24
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1200
   joint_3:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 50.24
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1200
   uj_11:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_12:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_13:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_21:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_22:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_23:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_31:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_32:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000
   uj_33:
     has_velocity_limits: true
-    max_velocity: 10
+    max_velocity: 100
     has_acceleration_limits: true
-    max_acceleration: 100
+    max_acceleration: 1000

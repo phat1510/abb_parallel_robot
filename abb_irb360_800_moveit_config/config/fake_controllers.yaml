@@ -6,6 +6,7 @@ controller_list:
       - uj_11
       - uj_12
       - uj_13
+      - uj_14
   - name: fake_delta_arm_2_controller
     type: $(arg fake_execution_type)
     joints:
@@ -13,6 +14,7 @@ controller_list:
       - uj_21
       - uj_22
       - uj_23
+      - uj_24
   - name: fake_delta_arm_3_controller
     type: $(arg fake_execution_type)
     joints:
@@ -20,6 +22,7 @@ controller_list:
       - uj_31
       - uj_32
       - uj_33
+      - uj_34
   - name: fake_delta_irb360_controller
     type: $(arg fake_execution_type)
     joints:
@@ -27,14 +30,17 @@ controller_list:
       - uj_11
       - uj_12
       - uj_13
+      - uj_14
       - joint_2
       - uj_21
       - uj_22
       - uj_23
+      - uj_24
       - joint_3
       - uj_31
       - uj_32
       - uj_33
+      - uj_34
 initial:  # Define initial robot poses per group
   - group: delta_arm_1
     pose: arm_1_default

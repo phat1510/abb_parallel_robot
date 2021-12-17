@@ -1,5 +1,5 @@
 controller_list:
-  - name: delta_controller
+  - name: delta_arm_1_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: True
@@ -8,6 +8,35 @@ controller_list:
       - uj_11
       - uj_12
       - uj_13
+      - uj_14
+  - name: delta_arm_2_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_2
+      - uj_21
+      - uj_22
+      - uj_23
+  - name: delta_arm_3_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_3
+      - uj_31
+      - uj_32
+      - uj_33
+  - name: delta_irb360_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_1
+      - uj_11
+      - uj_12
+      - uj_13
+      - uj_14
       - joint_2
       - uj_21
       - uj_22

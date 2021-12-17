@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
+
+  <xacro:macro name="irb360_800_moving_platform" params="parent theta *origin">
+
+    <joint name="uj_${theta}4" type="continuous">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}_link_4" />
+      <child link="${parent}_moving_platform" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${parent}_moving_platform">
+      <xacro:if value="${parent == 'arm_1'}"> 
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://abb_irb360_support/meshes/moving_platform.STL" />
+          </geometry>
+          <material name="">
+            <color rgba="1 1 1 1" />
+          </material>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://abb_irb360_support/meshes/moving_platform.STL" />
+          </geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <joint name="joint_4${theta}" type="fixed">
+      <xacro:if value="${parent == 'arm_1'}"> 
+        <origin xyz="-0.0449999999999976 0 0" rpy="0 0 0" />
+      </xacro:if> 
+      <xacro:if value="${parent == 'arm_2'}"> 
+        <origin xyz="-0.0449999999999976 0 0" rpy="0 0 2.0944" />
+      </xacro:if> 
+      <xacro:if value="${parent == 'arm_3'}"> 
+        <origin xyz="-0.0449999999999976 0 0" rpy="0 0 -2.0944" />
+      </xacro:if> 
+      <!-- <origin xyz="-0.0449999999999976 0 0" rpy="0 0 0" /> -->
+      <parent link="${parent}_moving_platform" />
+      <child link="${parent}_end_link" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${parent}_end_link">
+      <xacro:if value="${parent == 'arm_1'}"> 
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://abb_irb360_support/meshes/end_link.STL" />
+          </geometry>
+          <material name="">
+            <color rgba="1 1 1 1" />
+          </material>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://abb_irb360_support/meshes/end_link.STL" />
+          </geometry>
+        </collision>
+      </xacro:if>
+    </link>
+
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <joint name="${parent}_tool_mounting_point" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${parent}_end_link"/>
+      <child link="${parent}_flange"/>
+    </joint>
+    <link name="${parent}_flange"/>
+
+    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <joint name="${parent}_tool0_point" type="fixed">
+      <!-- <origin xyz="0 0 0" rpy="0 ${radians(180)} 0" /> -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${parent}_flange" />
+      <child link="${parent}_tool0" />
+    </joint>
+    <link name="${parent}_tool0" />
+
+<!-- -2.09333 -->
+  </xacro:macro>
+
+</robot>

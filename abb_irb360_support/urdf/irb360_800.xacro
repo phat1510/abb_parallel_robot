@@ -4,6 +4,7 @@
 
   <xacro:macro name="irb360_800">
 
+  <!-- Define base link -->
     <link name="base_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -21,7 +22,8 @@
         </geometry>
       </collision>
     </link>
-
+    
+  <!-- Attach all arms to base link -->
     <xacro:irb360_800_arm arm="arm_1" theta="1">
       <origin xyz="0.2 0 -0.275" rpy="0 -0.11527 0" />
     </xacro:irb360_800_arm>
